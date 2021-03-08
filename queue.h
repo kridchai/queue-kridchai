@@ -7,7 +7,7 @@ typedef struct{
   int size;
 }Queue;
 
-void Enqueue(*Queue Q,int x)
+void Enqueue(Queue *Q,int x)
 {
   NodePtr NewNode = (NodePtr)malloc(sizeof(Node));
   NewNode->value = x;
@@ -27,7 +27,7 @@ void Enqueue(*Queue Q,int x)
    Q->size++;
   }
 }
-int Dequeue(*Queue Q)
+int Dequeue(Queue *Q)
 {
   if(Q->size > 0)
   {

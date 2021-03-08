@@ -3,14 +3,15 @@
 #include "node.h"
 
 typedef struct{
-  NodePtr head,tail;
+  OrderPtr head,tail;
   int size;
 }Queue;
 
-void Enqueue(Queue *Q,int x)
+void Enqueue(Queue *Q,int x,int y)
 {
-  NodePtr NewNode = (NodePtr)malloc(sizeof(Node));
-  NewNode->value = x;
+  OrderPtr NewNode = (OrderPtr)malloc(sizeof(Order));
+  NewNode->order_number = x;
+  NewNode->q = y;
   NewNode->NextPtr = NULL;
   if(NewNode){
     if(Q->head==NULL)
@@ -20,19 +21,21 @@ void Enqueue(Queue *Q,int x)
    }
    else
     {
-     NodePtr t = Q->tail;
-     t->next = NewNode;
+     OrderPtr t = Q->tail;
+     t->NextPtr = NewNode;
      Q->tail = NewNode;
    }
    Q->size++;
   }
 }
-int Dequeue(Queue *Q)
+int Dequeue(Queue *Q,int *y)
 {
+  int x;
   if(Q->size > 0)
   {
-     NodePtr t = Q->head;
-    int x = t->value;
+     OrderPtr t = Q->head;
+    x = t->order_number;
+    *y = t->q;
     if(Q->size==1)
       Q->tail==NULL;
     Q->head = t->NextPtr;

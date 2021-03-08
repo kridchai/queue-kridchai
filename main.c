@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "queue.h"
 
-int main(void) {
+int main(int argc,char **argv) {
   Queue Q;
   Q.head = NULL;
   Q.tail = NULL;
@@ -10,6 +10,6 @@ int main(void) {
 
   int i;
   for(i = 1;i<argc;i++)
-      Enqueue(&Q,) 
+      Enqueue(&Q,atoi(argv[i]));
   return 0;
 }

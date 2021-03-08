@@ -34,7 +34,7 @@ int Dequeue(Queue *Q)
      NodePtr t = Q->head;
     int x = t->value;
     if(Q->size==1)
-     Q->tail==NULL;
+      Q->tail==NULL;
     Q->head = t->NextPtr;
     free(t);
     Q->size--;

@@ -12,7 +12,7 @@ int main(int argc,char **argv) {
   int i = 1;
   int order,qu,customer = 1,pay,cash;
   char food[20];
-  while(i<=argc)
+  while(i<=argc-1)
       {
         if(strcmp(argv[i],"x")!=0)
           {
@@ -46,7 +46,7 @@ int main(int argc,char **argv) {
             }
             customer+=1;
             i+=1;
-             printf("there are %d left in the queue\n",Q.size); 
+            
           }
       } 
       printf("there are %d left in the queue\n",Q.size); 

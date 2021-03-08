@@ -3,19 +3,19 @@
 
 struct node{
   int value;
-  struct node * NextPtr;
+  struct node * Next;
 };
 typedef struct node Node;
 typedef struct node* NodePtr;
 
 
 
-typedef struct{
+struct order{
   int order_number;
   int q;
-  struct Order *NextPtr;
-}Order;
-
-typedef Order* OrderPtr;
+  struct order *NextPtr;
+};
+typedef struct order Order;
+typedef struct order* OrderPtr;
 #endif
 
